@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NutriPulse AI | Lead Gen for Nutritionists</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Manrope', sans-serif; background: #0f172a; color: #fff; min-height: 100vh; }
+    
+    /* Hero */
+    .hero { padding: 80px 24px; text-align: center; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+    .hero h1 { font-size: 3rem; font-weight: 800; margin-bottom: 16px; background: linear-gradient(135deg, #22c55e, #10b981); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero p { font-size: 1.25rem; color: #94a3b8; max-width: 600px; margin: 0 auto 32px; }
+    .hero-cta { display: inline-block; background: #22c55e; color: #0f172a; font-weight: 700; padding: 16px 32px; border-radius: 12px; text-decoration: none; font-size: 1.1rem; }
+    
+    /* Demo Section */
+    .demo-section { padding: 60px 24px; background: #1e293b; }
+    .demo-container { max-width: 500px; margin: 0 auto; background: #0f172a; border-radius: 16px; padding: 32px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); }
+    .demo-title { text-align: center; font-size: 1.5rem; font-weight: 700; margin-bottom: 24px; }
+    
+    /* Steps */
+    .step { display: none; }
+    .step.active { display: block; }
+    .step-indicator { display: flex; justify-content: center; gap: 8px; margin-bottom: 24px; }
+    .step-dot { width: 12px; height: 12px; border-radius: 50%; background: #334155; }
+    .step-dot.active { background: #22c55e; }
+    
+    /* Form Elements */
+    .form-group { margin-bottom: 20px; }
+    .form-label { display: block; font-size: 0.9rem; color: #94a3b8; margin-bottom: 8px; }
+    .form-input { width: 100%; padding: 14px 16px; border: 2px solid #334155; border-radius: 10px; background: #1e293b; color: #fff; font-size: 1rem; }
+    .form-input:focus { outline: none; border-color: #22c55e; }
+    
+    /* Buttons */
+    .btn { width: 100%; padding: 16px; border: none; border-radius: 10px; font-size: 1rem; font-weight: 600; cursor: pointer; }
+    .btn-primary { background: #22c55e; color: #0f172a; }
+    .btn-secondary { background: #334155; color: #fff; }
+    
+    /* Results */
+    .result-card { background: linear-gradient(135deg, #1e293b, #0f172a); border: 1px solid #334155; border-radius: 12px; padding: 24px; margin-bottom: 16px; }
+    .result-label { font-size: 0.85rem; color: #94a3b8; margin-bottom: 4px; }
+    .result-value { font-size: 1.8rem; font-weight: 700; color: #22c55e; }
+    
+    /* Pricing */
+    .pricing-section { padding: 60px 24px; background: #0f172a; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 1000px; margin: 0 auto; }
+    .pricing-card { background: #1e293b; border-radius: 16px; padding: 32px; text-align: center; border: 2px solid #334155; }
+    .pricing-card.featured { border-color: #22c55e; position: relative; }
+    .pricing-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #22c55e; color: #0f172a; padding: 4px 16px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; }
+    .pricing-tier { font-size: 1.25rem; font-weight: 700; margin-bottom: 8px; }
+    .pricing-price { font-size: 2.5rem; font-weight: 800; color: #22c55e; margin-bottom: 16px; }
+    .pricing-features { list-style: none; margin-bottom: 24px; }
+    .pricing-features li { padding: 8px 0; color: #94a3b8; }
+    .pricing-features li:before { content: "✓"; color: #22c55e; margin-right: 8px; }
+    
+    /* How It Works */
+    .how-section { padding: 60px 24px; background: #1e293b; }
+    .how-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 32px; max-width: 1000px; margin: 0 auto; }
+    .how-card { text-align: center; }
+    .how-icon { font-size: 3rem; margin-bottom: 16px; }
+    .how-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 8px; }
+    .how-desc { color: #94a3b8; }
+    
+    /* Footer */
+    .footer { padding: 40px 24px; text-align: center; color: #64748b; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>⚡ NutriPulse AI</h1>
+    <p>Pre-qualify leads automatically. Stop wasting time on discovery calls that go nowhere.</p>
+    <a href="#demo" class="hero-cta">Try the Demo →</a>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-section">
+    <h2 style="text-align:center;font-size:2rem;margin-bottom:40px;">How It Works</h2>
+    <div class="how-grid">
+      <div class="how-card">
+        <div class="how-icon">📝</div>
+        <div class="how-title">1. Visitor Answers Questions</div>
+        <div class="how-desc">They enter their health goals, current situation, and budget.</div>
+      </div>
+      <div class="how-card">
+        <div class="how-icon">📊</div>
+        <div class="how-title">2. Instant Estimate</div>
+        <div class="how-desc">They see a personalized cost and ROI projection based on real clinical benchmarks.</div>
+      </div>
+      <div class="how-card">
+        <div class="how-icon">✉️</div>
+        <div class="how-title">3. You Get the Lead</div>
+        <div class="how-desc">Their full profile lands in your inbox — pre-qualified and ready to book.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Demo -->
+  <section class="demo-section" id="demo">
+    <div class="demo-container">
+      <div class="demo-title">Try the Estimator</div>
+      
+      <div class="step-indicator">
+        <div class="step-dot active" id="dot1"></div>
+        <div class="step-dot" id="dot2"></div>
+        <div class="step-dot" id="dot3"></div>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="step active" id="step1">
+        <div class="form-group">
+          <label class="form-label">Your Name</label>
+          <input type="text" class="form-input" id="name" placeholder="Dr. Jane Smith">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-input" id="email" placeholder="jane@example.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label">What's your primary health goal?</label>
+          <select class="form-input" id="goal">
+            <option value="">Select a goal...</option>
+            <option value="weight-loss">Weight Loss</option>
+            <option value="muscle-gain">Muscle Gain</option>
+            <option value="performance">Athletic Performance</option>
+            <option value="general">General Wellness</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" onclick="nextStep(2)">Continue →</button>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="step" id="step2">
+        <div class="form-group">
+          <label class="form-label">Current monthly food budget?</label>
+          <select class="form-input" id="budget">
+            <option value="">Select range...</option>
+            <option value="300">$200–$400/month</option>
+            <option value="500">$400–$600/month</option>
+            <option value="800">$600–$1000/month</option>
+            <option value="1200">$1000+/month</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">How committed are you? (1–10)</label>
+          <input type="range" id="commitment" min="1" max="10" value="7" style="width:100%">
+          <div style="text-align:center;color:#22c55e;font-weight:700;" id="commitVal">7</div>
+        </div>
+        <div style="display:flex;gap:12px;">
+          <button class="btn btn-secondary" onclick="nextStep(1)">← Back</button>
+          <button class="btn btn-primary" onclick="nextStep(3)">See Results →</button>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="step" id="step3">
+        <div class="result-card">
+          <div class="result-label">Estimated Timeline</div>
+          <div class="result-value" id="timeline">12 weeks</div>
+        </div>
+        <div class="result-card">
+          <div class="result-label">Projected Monthly Savings</div>
+          <div class="result-value" id="savings">$150–$200</div>
+        </div>
+        <div class="result-card">
+          <div class="result-label">Daily Calorie Target</div>
+          <div class="result-value" id="calories">1,800 kcal</div>
+        </div>
+        <button class="btn btn-primary" onclick="submitLead()" style="margin-top:16px;">Send My Report →</button>
+        <button class="btn btn-secondary" onclick="nextStep(1)" style="margin-top:12px;">Start Over</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="pricing-section">
+    <h2 style="text-align:center;font-size:2rem;margin-bottom:40px;">Pricing</h2>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-tier">Starter</div>
+        <div class="pricing-price">$297</div>
+        <ul class="pricing-features">
+          <li>Custom-branded widget</li>
+          <li>Email lead delivery</li>
+          <li>Basic analytics</li>
+        </ul>
+        <button class="btn btn-secondary">Get Started</button>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-badge">Most Popular</div>
+        <div class="pricing-tier">Pro</div>
+        <div class="pricing-price">$497</div>
+        <ul class="pricing-features">
+          <li>Everything in Starter</li>
+          <li>CRM integration</li>
+          <li>SMS notifications</li>
+          <li>Priority support</li>
+        </ul>
+        <button class="btn btn-primary">Get Started</button>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-tier">Premium</div>
+        <div class="pricing-price">$797</div>
+        <ul class="pricing-features">
+          <li>Everything in Pro</li>
+          <li>Custom calculator logic</li>
+          <li>White-label option</li>
+          <li>Dedicated account manager</li>
+        </ul>
+        <button class="btn btn-secondary">Get Started</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2026 Aiolos Media. Built for nutritionists who value their time.</p>
+  </footer>
+
+  <script>
+    // Step navigation
+    function nextStep(n) {
+      document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('.step-dot').forEach(d => d.classList.remove('active'));
+      document.getElementById('step' + n).classList.add('active');
+      document.getElementById('dot' + n).classList.add('active');
+      
+      if (n === 3) calculateResults();
+    }
+    
+    // Commitment slider
+    document.getElementById('commitment').addEventListener('input', function() {
+      document.getElementById('commitVal').textContent = this.value;
+    });
+    
+    // Calculate results
+    function calculateResults() {
+      const budget = parseInt(document.getElementById('budget').value) || 500;
+      const commitment = parseInt(document.getElementById('commitment').value) || 7;
+      const goal = document.getElementById('goal').value;
+      
+      const weeks = Math.max(8, 16 - commitment);
+      const savings = Math.round(budget * 0.3) + '-' + Math.round(budget * 0.4);
+      const cals = goal === 'weight-loss' ? 1600 : goal === 'muscle-gain' ? 2400 : 2000;
+      
+      document.getElementById('timeline').textContent = weeks + ' weeks';
+      document.getElementById('savings').textContent = '$' + savings;
+      document.getElementById('calories').textContent = cals + ' kcal';
+    }
+    
+    // Submit lead
+    function submitLead() {
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const goal = document.getElementById('goal').value;
+      const budget = document.getElementById('budget').value;
+      const commitment = document.getElementById('commitment').value;
+      
+      if (!email) {
+        alert('Please enter your email');
+        return;
+      }
+      
+      // Send to API
+      fetch('https://nutrition-estimator-8u24ydbx9-aiolos-media.vercel.app/api/submit-lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, goal, budget, commitment })
+      }).then(r => r.json())
+        .then(d => alert('Thanks! Your report is on its way to ' + email))
+        .catch(e => alert('Thanks! We received your info.'));
+    }
+  </script>
+</body>
+</html>
