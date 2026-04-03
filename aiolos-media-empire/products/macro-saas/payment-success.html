@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Successful - MacroPWA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    .font-display { font-family: 'Playfair Display', serif; }
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-emerald-600 to-emerald-800 min-h-screen flex items-center justify-center">
+  
+  <div class="max-w-md mx-auto px-6 text-center">
+    <div class="bg-white rounded-2xl shadow-2xl p-8">
+      <div class="text-6xl mb-4">🎉</div>
+      <h1 class="font-display text-3xl font-bold text-emerald-600 mb-2">Payment Successful!</h1>
+      <p class="text-gray-600 mb-6">Your MacroPWA calculator is being set up. Check your email for dashboard access.</p>
+      
+      <div class="bg-emerald-50 rounded-xl p-4 mb-6 text-left">
+        <p class="text-sm text-gray-600 mb-2"><strong>What's next:</strong></p>
+        <ul class="text-sm text-gray-600 space-y-1">
+          <li>✓ Payment confirmed</li>
+          <li>→ Dashboard setup (1-2 min)</li>
+          <li>→ Email with access link</li>
+          <li>→ Customize your calculator</li>
+        </ul>
+      </div>
+      
+      <a href="/" class="inline-block bg-emerald-600 text-white font-semibold px-6 py-3 rounded-xl hover:bg-emerald-700 transition-all">
+        Back to Homepage
+      </a>
+    </div>
+    
+    <p class="text-white/80 text-sm mt-6">Questions? Contact hello@aiolosmedia.com</p>
+  </div>
+
+  <script>
+    // Capture payment automatically
+    const urlParams = new URLSearchParams(window.location.search);
+    const leadId = urlParams.get('leadId');
+    const subscriptionId = urlParams.get('subscription_id');
+    const token = urlParams.get('token');
+    const orderId = urlParams.get('token'); // PayPal uses 'token' for order ID
+    
+    if (leadId) {
+      // Capture the payment
+      fetch('/api/capture-paypal-payment', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ leadId, subscriptionId, orderId })
+      }).catch(console.error);
+    }
+  </script>
+</body>
+</html>

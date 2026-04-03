@@ -1,0 +1,12 @@
+{
+  "name": "macropwa-landing",
+  "version": "1.0.0",
+  "description": "MacroPWA - Branded nutrition calculators for dietitians",
+  "scripts": {
+    "deploy": "node deploy.cjs"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0"
+  },
+  "devDependencies": {}
+}

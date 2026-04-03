@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "public": true,
+  "routes": [
+    { "src": "/api/submit-lead", "dest": "/api/submit-lead.js" },
+    { "src": "/api/create-paypal-order", "dest": "/api/create-paypal-order.js" },
+    { "src": "/api/capture-paypal-payment", "dest": "/api/capture-paypal-payment.js" },
+    { "src": "/api/paypal-webhook-v2", "dest": "/api/paypal-webhook-v2.js" },
+    { "src": "/payment-success", "dest": "/payment-success.html" },
+    { "src": "/payment-cancelled", "dest": "/payment-cancelled.html" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ],
+  "functions": {
+    "api/*.js": {
+      "maxDuration": 30
+    }
+  }
+}

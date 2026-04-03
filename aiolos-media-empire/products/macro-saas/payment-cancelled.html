@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Cancelled - MacroPWA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    .font-display { font-family: 'Playfair Display', serif; }
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+  
+  <div class="max-w-md mx-auto px-6 text-center">
+    <div class="bg-white rounded-2xl shadow-2xl p-8">
+      <div class="text-6xl mb-4">😕</div>
+      <h1 class="font-display text-3xl font-bold text-gray-800 mb-2">Payment Cancelled</h1>
+      <p class="text-gray-600 mb-6">No worries! Your payment was cancelled and no charges were made.</p>
+      
+      <div class="space-y-3">
+        <a href="#" onclick="history.back(); return false;" 
+           class="block bg-emerald-600 text-white font-semibold px-6 py-3 rounded-xl hover:bg-emerald-700 transition-all">
+          Try Again
+        </a>
+        
+        <a href="/" class="block text-gray-600 hover:text-gray-800 transition-colors">
+          ← Back to Homepage
+        </a>
+      </div>
+    </div>
+    
+    <p class="text-gray-500 text-sm mt-6">Questions? Contact hello@aiolosmedia.com</p>
+  </div>
+
+</body>
+</html>
