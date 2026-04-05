@@ -124,6 +124,30 @@
     </div>
   </section>
 
+  <!-- AI DEMO SECTION -->
+  <section class="gradient-hero text-white px-6 py-16">
+    <div class="max-w-4xl mx-auto text-center">
+      <span class="inline-block bg-white/10 text-white text-xs font-bold tracking-widest uppercase px-4 py-1 rounded-full mb-4">Powered by AI</span>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Try the AI Meal Plan Generator</h2>
+      <p class="text-green-200 text-lg mb-8">See what your clients get — generate a personalized 7-day plan instantly.</p>
+      
+      <div class="bg-white/10 backdrop-blur rounded-2xl p-6 max-w-2xl mx-auto text-left">
+        <textarea id="mealPrompt" rows="3" placeholder="Example: I have a client who is 42, trains 4x/week, vegetarian, budget $120/week for groceries..." class="w-full px-4 py-3 rounded-xl text-gray-900 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-green-400" style="font-family: Inter, sans-serif;"></textarea>
+        <button onclick="generateMealPlan()" id="genBtn" class="mt-3 w-full bg-green-500 hover:bg-green-400 text-white font-bold py-3 px-6 rounded-xl transition flex items-center justify-center gap-2">
+          <span>⚡ Generate Meal Plan</span>
+        </button>
+        <div id="genResult" class="mt-4 hidden">
+          <div id="genLoading" class="hidden text-center py-4">
+            <div class="spinner inline-block w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+            <p class="text-green-200 text-sm mt-2">Generating your meal plan...</p>
+          </div>
+          <div id="genOutput" class="bg-white/10 rounded-xl p-4 text-sm text-green-50 whitespace-pre-wrap font-mono max-h-96 overflow-y-auto"></div>
+        </div>
+      </div>
+      <p class="text-green-300 text-xs mt-4">Webhook → Ollama AI → JSON response in seconds</p>
+    </div>
+  </section>
+
   <!-- THE WORKFLOW AUDIT: THE GOLDEN THREAD -->
   <section class="bg-gray-50 px-6 py-20">
     <div class="max-w-5xl mx-auto">
@@ -400,11 +424,46 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="bg-gray-900 text-gray-500 text-center py-8 px-6 text-sm">
-    <p>⚕️ The Nutritionist Protocol · Aiolos Media</p>
-    <p class="mt-2">Questions? Contact the practice that built it.</p>
-  </footer>
+  <style>
+    .gradient-hero { background: linear-gradient(135deg, #0f2b1d 0%, #1a4d2e 40%, #2d6a4f 100%); }
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    .animate-spin { animation: spin 1s linear infinite; }
+  </style>
 
+  <script>
+    async function generateMealPlan() {
+      const prompt = document.getElementById('mealPrompt').value.trim();
+      if (!prompt) { alert('Please describe your client first.'); return; }
+      const btn = document.getElementById('genBtn');
+      const result = document.getElementById('genResult');
+      const loading = document.getElementById('genLoading');
+      const output = document.getElementById('genOutput');
+      btn.disabled = true;
+      btn.innerHTML = '<div class="spinline-block w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div> Generating...';
+      result.classList.remove('hidden');
+      loading.classList.remove('hidden');
+      output.classList.add('hidden');
+      try {
+        const res = await fetch('https://n8n.srv1524386.hstgr.cloud/webhook/meal-plan', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ prompt: prompt })
+        });
+        if (!res.ok) throw new Error('Webhook failed');
+        const data = await res.json();
+        loading.classList.add('hidden');
+        output.classList.remove('hidden');
+        // Ollama returns { model, response:{ message:{ content } }, done }
+        const content = data.response?.message?.content || JSON.stringify(data, null, 2);
+        output.textContent = content;
+      } catch(e) {
+        loading.classList.add('hidden');
+        output.classList.remove('hidden');
+        output.textContent = '⚠️ AI service unavailable. The webhook is configured — this demo requires Ollama running locally.';
+      }
+      btn.disabled = false;
+      btn.innerHTML = '<span>⚡ Generate Meal Plan</span>';
+    }
+  </script>
 </body>
 </html>
