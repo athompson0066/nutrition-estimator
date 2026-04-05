@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Nutritionist Protocol | Clinical Onboarding System for Private Practice</title>
+  <meta name="description" content="The clinical workflow system that eliminates 90 minutes of admin per new client. Used by established nutritionists who charge $150+/hour and refuse to look amateur." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .font-display { font-family: 'Playfair Display', serif; }
+    .gradient-hero { background: linear-gradient(135deg, #0f2b1d 0%, #1a4d2e 40%, #2d6a4f 100%); }
+    .tier-clinical { border: 2px solid #16a34a; }
+    .badge-clinical { background: linear-gradient(135deg, #16a34a, #0f766e); }
+    .check-icon { color: #16a34a; }
+    .pulse-btn { animation: pulse-green 2s infinite; }
+    @keyframes pulse-green {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.4); }
+      50% { box-shadow: 0 0 0 12px rgba(22, 163, 74, 0); }
+    }
+    .protocol-line { border-top: 2px solid #d1fae5; }
+    .protocol-dot::before {
+      content: '';
+      position: absolute;
+      left: -24px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 12px;
+      height: 12px;
+      background: #16a34a;
+      border-radius: 50%;
+    }
+    .loss-box { background: linear-gradient(135deg, #fef2f2, #fee2e2); border-left: 4px solid #dc2626; }
+    .timeline-card { background: #f0fdf4; border: 1px solid #bbf7d0; }
+  </style>
+</head>
+<body class="bg-white text-gray-900">
+
+  <!-- NAV -->
+  <nav class="flex items-center justify-between px-6 py-4 max-w-6xl mx-auto">
+    <div class="text-lg font-bold text-green-900">⚕️ The Nutritionist Protocol</div>
+    <a href="#pricing" class="text-sm font-semibold text-green-700 hover:text-green-900 transition">Get the System →</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="gradient-hero text-white px-6 py-20 md:py-28 text-center">
+    <div class="max-w-3xl mx-auto">
+      <span class="inline-block bg-white/10 text-white text-xs font-bold tracking-widest uppercase px-4 py-1 rounded-full mb-6">For Established Private Practice Nutritionists</span>
+      <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+        The Clinical Onboarding System<br/>
+        <span class="text-green-300">That Makes Your $150/Hour Rate<br/>Look Earned</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-green-100 mb-4 max-w-2xl mx-auto">
+        8 templates. Personalized for you. Delivered within 24 hours.
+      </p>
+      <p class="text-green-200 text-base mb-10">
+        We build the entire system with your name and practice details — and deliver it to your inbox within 24 hours. No Canva required.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="order.html" class="pulse-btn bg-white text-green-900 font-bold text-lg px-8 py-4 rounded-xl hover:bg-green-50 transition">
+          Order Now — We Customize Everything →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HATE-TO-LOSE CALCULATION -->
+  <section class="loss-box px-6 py-12">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-red-800 mb-4">Every New Client You Onboard Without a System Costs You:</h2>
+      <div class="flex flex-col md:flex-row gap-8 justify-center items-center text-center">
+        <div class="bg-white rounded-2xl p-6 shadow-sm">
+          <div class="text-5xl font-extrabold text-red-600">90</div>
+          <div class="text-gray-600 font-medium mt-1">minutes of admin</div>
+        </div>
+        <div class="text-3xl text-red-400 font-bold">=</div>
+        <div class="bg-white rounded-2xl p-6 shadow-sm">
+          <div class="text-5xl font-extrabold text-red-600">$225</div>
+          <div class="text-gray-600 font-medium mt-1">in unwritten-off labor</div>
+        </div>
+        <div class="text-3xl text-red-400 font-bold">=</div>
+        <div class="bg-white rounded-2xl p-6 shadow-sm">
+          <div class="text-5xl font-extrabold text-red-600">2</div>
+          <div class="text-gray-600 font-medium mt-1">free days per month</div>
+        </div>
+      </div>
+      <p class="text-red-700 font-semibold mt-6 text-lg">After 5 new clients this month, you've worked two full days for free.</p>
+      <p class="text-red-800 font-bold mt-2 text-xl">The Protocol turns 90 minutes into 20.</p>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF BAR -->
+  <section class="bg-gray-900 text-white py-6 px-6">
+    <div class="max-w-5xl mx-auto flex flex-wrap justify-center gap-8 text-center text-sm font-medium">
+      <span>⚕️ Used by clinical nutritionists</span>
+      <span>✅ Eliminates 70 min of admin per client</span>
+      <span>✅ Personalized for your practice</span>
+      <span>✅ Client retention system</span>
+      <span>✅ Instant digital delivery</span>
+    </div>
+  </section>
+
+  <!-- THE PROBLEM -->
+  <section class="px-6 py-20 max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">The Two Problems Killing Your Practice</h2>
+    <p class="text-gray-500 mb-12 text-lg">Most nutritionists solve one. They never solve both.</p>
+    <div class="grid md:grid-cols-2 gap-8 text-left">
+      <div class="bg-red-50 border border-red-100 rounded-2xl p-8">
+        <div class="text-4xl mb-4">🔥</div>
+        <h3 class="text-xl font-bold text-red-800 mb-3">Problem 1: Admin Burnout</h3>
+        <p class="text-gray-700">You became a nutritionist to change lives — not to spend 3 hours building meal plans from scratch before every client call. Yet here you are, rebuilding the same intake forms and grocery lists from scratch for every new client.</p>
+      </div>
+      <div class="bg-red-50 border border-red-100 rounded-2xl p-8">
+        <div class="text-4xl mb-4">📉</div>
+        <h3 class="text-xl font-bold text-red-800 mb-3">Problem 2: Client Non-Compliance</h3>
+        <p class="text-gray-700">Clients walk out with advice but no plan. They forget what to eat by Day 3. They feel unsupported by Day 7. They're gone by Day 14 — and so is your recurring revenue.</p>
+      </div>
+    </div>
+    <div class="mt-12 bg-green-50 border border-green-200 rounded-2xl p-8 max-w-2xl mx-auto">
+      <p class="text-green-800 font-bold text-lg">The Nutritionist Protocol solves both simultaneously.</p>
+      <p class="text-green-700 mt-2">It gives you a clinical system that looks professional — and gives your clients a clear journey that keeps them past Day 14.</p>
+    </div>
+  </section>
+
+  <!-- THE WORKFLOW AUDIT: THE GOLDEN THREAD -->
+  <section class="bg-gray-50 px-6 py-20">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <span class="text-xs font-bold tracking-widest uppercase text-green-700 bg-green-100 px-3 py-1 rounded-full">The System</span>
+        <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-4">The Golden Thread: How Clients Move Through the Protocol</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">This isn't a template pack. It's a clinical workflow that starts the moment a lead pays — and keeps them engaged through Day 30.</p>
+      </div>
+
+      <!-- Timeline -->
+      <div class="max-w-3xl mx-auto space-y-0">
+        <!-- Day 0 -->
+        <div class="timeline-card rounded-2xl p-6 mb-4 relative">
+          <div class="flex items-start gap-4">
+            <div class="bg-green-600 text-white text-sm font-bold px-3 py-1 rounded-full whitespace-nowrap">Day 0</div>
+            <div>
+              <h4 class="font-bold text-gray-900 mb-1">Welcome Guide</h4>
+              <p class="text-gray-600 text-sm">Sets the authority tone before the first call. Your client arrives feeling like they've already hired someone exceptional.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Arrow -->
+        <div class="flex justify-center text-green-400 text-2xl">↓</div>
+
+        <!-- Day 1 -->
+        <div class="timeline-card rounded-2xl p-6 mb-4 relative">
+          <div class="flex items-start gap-4">
+            <div class="bg-green-600 text-white text-sm font-bold px-3 py-1 rounded-full whitespace-nowrap">Day 1</div>
+            <div>
+              <h4 class="font-bold text-gray-900 mb-1">Clinical Intake Assessment</h4>
+              <p class="text-gray-600 text-sm">12 questions. Generates a client archetype score — Overwhelmed Grazer, Perfectionist Planner, Budget Navigator. The intake form doesn't just collect data. It starts building the plan.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Arrow -->
+        <div class="flex justify-center text-green-400 text-2xl">↓</div>
+
+        <!-- Day 3 -->
+        <div class="timeline-card rounded-2xl p-6 mb-4 relative">
+          <div class="flex items-start gap-4">
+            <div class="bg-green-600 text-white text-sm font-bold px-3 py-1 rounded-full whitespace-nowrap">Day 3</div>
+            <div>
+              <h4 class="font-bold text-gray-900 mb-1">Personalized Meal Plan</h4>
+              <p class="text-gray-600 text-sm">Built from the intake archetype. Your client gets a plan that actually fits their life — not a generic template they ignore by Day 4.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Arrow -->
+        <div class="flex justify-center text-green-400 text-2xl">↓</div>
+
+        <!-- Day 3-4 -->
+        <div class="timeline-card rounded-2xl p-6 mb-4 relative">
+          <div class="flex items-start gap-4">
+            <div class="bg-green-600 text-white text-sm font-bold px-3 py-1 rounded-full whitespace-nowrap">Day 3–4</div>
+            <div>
+              <h4 class="font-bold text-gray-900 mb-1">Grocery List + Portion Guide</h4>
+              <p class="text-gray-600 text-sm">Curated from the meal plan. Eliminates "I didn't know what to buy." Removes the cognitive load that causes compliance to crater before Day 7.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Arrow -->
+        <div class="flex justify-center text-green-400 text-2xl">↓</div>
+
+        <!-- Days 1-21 -->
+        <div class="timeline-card rounded-2xl p-6 mb-4 relative">
+          <div class="flex items-start gap-4">
+            <div class="bg-green-600 text-white text-sm font-bold px-3 py-1 rounded-full whitespace-nowrap">Days 1–21</div>
+            <div>
+              <h4 class="font-bold text-gray-900 mb-1">14-Day Compliance Tracker</h4>
+              <p class="text-gray-600 text-sm">Feeds a hidden compliance score. Client sees their percentage. You see their percentage. By Day 14, you know who's at risk before they ghost.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Arrow -->
+        <div class="flex justify-center text-green-400 text-2xl">↓</div>
+
+        <!-- Day 14 -->
+        <div class="timeline-card rounded-2xl p-6 mb-4 relative">
+          <div class="flex items-start gap-4">
+            <div class="bg-green-600 text-white text-sm font-bold px-3 py-1 rounded-full whitespace-nowrap">Day 14</div>
+            <div>
+              <h4 class="font-bold text-gray-900 mb-1">Progress Check-In Report</h4>
+              <p class="text-gray-600 text-sm">Auto-generated from tracker data. Shows measurable progress — not vibes. Justifies your $150/hour rate with actual clinical data.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Arrow -->
+        <div class="flex justify-center text-green-400 text-2xl">↓</div>
+
+        <!-- Day 30 -->
+        <div class="timeline-card rounded-2xl p-6 relative">
+          <div class="flex items-start gap-4">
+            <div class="bg-green-600 text-white text-sm font-bold px-3 py-1 rounded-full whitespace-nowrap">Day 30</div>
+            <div>
+              <h4 class="font-bold text-gray-900 mb-1">Recipe Swap + Full Review</h4>
+              <p class="text-gray-600 text-sm">Keeps the system alive. Clients contribute recipes tied to their archetype. The protocol becomes self-sustaining — and keeps them past the 90-day mark.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-8">
+        <p class="text-gray-500 text-sm">Every tool eliminates one specific reason clients quit.</p>
+        <p class="text-gray-700 font-semibold mt-1">Quit because they're confused → Meal Plan + Grocery List. Quit because they felt unsupported → Tracker + Check-In.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERT-LEVEL ADDITIONS -->
+  <section class="px-6 py-20 max-w-5xl mx-auto">
+    <div class="text-center mb-12">
+      <span class="text-xs font-bold tracking-widest uppercase text-green-700 bg-green-100 px-3 py-1 rounded-full">What Makes It Clinical — Not Generic</span>
+      <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-4">3 Expert Additions That Justify the Price</h2>
+      <p class="text-gray-500 text-lg">These aren't in the $29 template packs. They're the difference between looking professional and being professional.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="border border-green-200 rounded-2xl p-8">
+        <div class="text-3xl mb-4">🧠</div>
+        <h3 class="font-bold text-lg mb-3">Client Archetype Scoring</h3>
+        <p class="text-gray-600 text-sm">The intake form scores the client across 4 risk dimensions and generates an archetype — not just collects data. "Overwhelmed Grazer," "Perfectionist Planner," "Budget Navigator." The meal plan that loads is determined by the score. This is the feature that makes it clinical, not cosmetic.</p>
+      </div>
+      <div class="border border-green-200 rounded-2xl p-8">
+        <div class="text-3xl mb-4">⚡</div>
+        <h3 class="font-bold text-lg mb-3">Automation Trigger Guide</h3>
+        <p class="text-gray-600 text-sm">Day 1: welcome email. Day 3: meal plan delivery. Day 14: check-in reminder. Day 30: recipe swap. Included: Zapier/Make workflow templates that run the timeline automatically. Your system works while you sleep.</p>
+      </div>
+      <div class="border border-green-200 rounded-2xl p-8">
+        <div class="text-3xl mb-4">📊</div>
+        <h3 class="font-bold text-lg mb-3">Compliance Score Calculator</h3>
+        <p class="text-gray-600 text-sm">A hidden calculation inside the Habit Tracker. Each entry feeds a percentage. By Day 14, the client sees: "Your compliance score is 62%. Clients who hit 60% by Day 14 complete the full 90-day program." This turns vague progress into clinical data your client pays for.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="bg-gray-900 text-white px-6 py-20">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">One Price. Full License. No Confusion.</h2>
+        <p class="text-gray-400 text-lg">Every tier includes unlimited client use. No "personal vs. client" distinction. You bought it to use with clients — that's exactly what it's for.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <!-- Tier 1: Standard -->
+        <div class="bg-white text-gray-900 rounded-2xl overflow-hidden">
+          <div class="bg-green-700 text-white text-center py-3 font-bold text-lg tracking-wide">
+            The Standard
+          </div>
+          <div class="p-8">
+            <div class="flex items-baseline gap-2 mb-1">
+              <span class="text-5xl font-extrabold text-green-900">$149</span>
+              <span class="text-gray-500">one-time</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-6">Instant download. Keep forever. Use with unlimited clients.</p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start gap-3 text-sm">
+                <span class="text-green-600 mt-0.5">✅</span>
+                <span>All 8 Protocol Templates (we build them for you)</span>
+              </li>
+              <li class="flex items-start gap-3 text-sm">
+                <span class="text-green-600 mt-0.5">✅</span>
+                <span>Client Archetype Scoring System (intake form with algorithm)</span>
+              </li>
+              <li class="flex items-start gap-3 text-sm">
+                <span class="text-green-600 mt-0.5">✅</span>
+                <span>14-Day Compliance Tracker with auto-score</span>
+              </li>
+              <li class="flex items-start gap-3 text-sm">
+                <span class="text-green-600 mt-0.5">✅</span>
+                <span>Automation Trigger Guide (Zapier/Make templates)</span>
+              </li>
+              <li class="flex items-start gap-3 text-sm">
+                <span class="text-green-600 mt-0.5">✅</span>
+                <span>Single practitioner license — unlimited clients</span>
+              </li>
+              <li class="flex items-start gap-3 text-sm">
+                <span class="text-green-600 mt-0.5">✅</span>
+                <span>Free updates for life</span>
+              </li>
+            </ul>
+            <a href="order.html" class="block text-center bg-green-700 hover:bg-green-800 text-white font-bold py-4 rounded-xl transition">
+              Get the Standard — $149 →
+            </a>
+          </div>
+        </div>
+
+        <!-- Tier 2: Clinical -->
+        <div class="bg-white text-gray-900 rounded-2xl overflow-hidden tier-clinical relative">
+          <div class="badge-clinical text-white text-center py-3 font-bold text-lg tracking-wide">
+            The Clinical — For Practices Scaling
+          </div>
+          <div class="p-8">
+            <div class="flex items-baseline gap-2 mb-1">
+              <span class="text-5xl font-extrabold text-green-900">$249</span>
+              <span class="text-gray-500">one-time</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-6">Everything in Standard, plus multi-practitioner and white-label rights.</p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start gap-3 text-sm">
+                <span class="text-green-600 mt-0.5">✅</span>
+                <span><strong>Everything in Standard</strong></span>
+              </li>
+              <li class="flex items-start gap-3 text-sm">
+                <span class="text-green-600 mt-0.5">✅</span>
+                <span>Clinic License — up to 5 practitioners</span>
+              </li>
+              <li class="flex items-start gap-3 text-sm">
+                <span class="text-green-600 mt-0.5">✅</span>
+                <span>Patient Onboarding Portal Setup Guide (Notion + Calendly)</span>
+              </li>
+              <li class="flex items-start gap-3 text-sm">
+                <span class="text-green-600 mt-0.5">✅</span>
+                <span>Practitioner Dashboard View — see all client compliance scores at once</span>
+              </li>
+              <li class="flex items-start gap-3 text-sm">
+                <span class="text-green-600 mt-0.5">✅</span>
+                <span>White-label rights — rebrand and resell to your clinic's name</span>
+              </li>
+              <li class="flex items-start gap-3 text-sm">
+                <span class="text-green-600 mt-0.5">✅</span>
+                <span>Priority support + onboarding call (30 min)</span>
+              </li>
+            </ul>
+            <a href="order.html" class="block text-center bg-green-900 hover:bg-green-950 text-white font-bold py-4 rounded-xl transition">
+              Get the Clinical — $249 →
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-center text-gray-500 text-sm mt-8">No monthly fees. No "personal use" restrictions. The license is yours. Use it with every client you have.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="px-6 py-20 max-w-3xl mx-auto">
+    <h2 class="text-3xl font-bold mb-8 text-center">Questions Worth Asking</h2>
+    <div class="space-y-6">
+      <div class="border border-gray-200 rounded-xl p-6">
+        <h4 class="font-bold mb-2">"I'm a brand new nutritionist. Is this too advanced for me?"</h4>
+        <p class="text-gray-600 text-sm">If you're starting from zero, you don't have the clinical workflow problem yet — but you will. Buying the Protocol now means you never build the bad habits that cause admin burnout. You'll start your practice with the system instead of building it retroactively at 11 PM.</p>
+      </div>
+      <div class="border border-gray-200 rounded-xl p-6">
+        <h4 class="font-bold mb-2">"What format do the templates arrive in?"</h4>
+        <p class="text-gray-600 text-sm">PDF, ready to use immediately. Your name, your practice, your details are already built in — no editing needed. If you want to modify them later, you can open them in any design tool, but it's not required.</p>
+      </div>
+      <div class="border border-gray-200 rounded-xl p-6">
+        <h4 class="font-bold mb-2">"Can I use this with my existing clients?"</h4>
+        <p class="text-gray-600 text-sm">Yes. The intake form and meal plan can be sent to an existing client on Day 1 of your next session. You don't have to wait for a new client to start using the system.</p>
+      </div>
+      <div class="border border-gray-200 rounded-xl p-6">
+        <h4 class="font-bold mb-2">"What makes this different from template packs on Etsy?"</h4>
+        <p class="text-gray-600 text-sm">Etsy template packs are files. The Protocol is a system. The intake form doesn't just collect answers — it generates a client archetype that determines which meal plan loads. The tracker doesn't just track habits — it calculates a compliance score. These aren't visual templates. They're clinical instruments.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section class="gradient-hero text-white px-6 py-20 text-center">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="font-display text-3xl md:text-4xl font-bold mb-6">Stop Building Meal Plans at 11 PM</h2>
+      <p class="text-green-100 text-lg mb-4">You've spent years learning clinical nutrition. The Protocol is the system that makes your expertise look as professional as it actually is.</p>
+      <p class="text-green-200 text-base mb-10">We build it. We personalize it. We deliver it. You just open the files.</p>
+      <a href="#pricing" class="pulse-btn bg-green-600 hover:bg-green-700 text-white font-bold text-lg px-10 py-4 rounded-xl transition">
+        Get the Protocol — $149 →
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-gray-500 text-center py-8 px-6 text-sm">
+    <p>⚕️ The Nutritionist Protocol · Aiolos Media</p>
+    <p class="mt-2">Questions? Contact the practice that built it.</p>
+  </footer>
+
+</body>
+</html>
